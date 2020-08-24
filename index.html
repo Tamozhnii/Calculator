@@ -9,29 +9,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <title>Ja­va­Script Loan Calculator</title>
+    <script src="script.js"></script>
   </head>
   <body>
     <section class="data">
       <h2>Enter Loan Data</h2>
       <div class="sum">
         <p>Sum ($):</p>
-        <input type="number" />
+        <input type="number" id="amount" onchange="calculate()"/>
       </div>
       <div class="percent">
         <p>Rate (%):</p>
-        <input type="number" />
+        <input type="number" id="apr" onchange="calculate()"/>
       </div>
       <div class="term">
         <p>Period (years):</p>
-        <input type="number" />
+        <input type="number" id="years" onchange="calculate()"/>
       </div>
       <div class="zipcode">
         <p>Zipcode (to find lenders):</p>
-        <input type="number" />
+        <input type="number" id="zipcode" onchange="calculate()"/>
       </div>
       <div class="calc">
         <p class="output">Approximate Payments:</p>
-        <button>Calculate</button>
+        <button onclick="calculate();">Calculate</button>
       </div>
       <div class="m_pay">
         <p>Monthly payment:</p>
@@ -39,11 +40,11 @@
       </div>
       <div class="total_pay">
         <p>Total payment:</p>
-        <span class="output" id="payment">00.00</span>
+        <span class="output" id="total">00.00</span>
       </div>
       <div class="interest">
         <p>Total interest:</p>
-        <span class="output" id="payment">00.00</span>
+        <span class="output" id="totalinterest">00.00</span>
       </div>
     </section>
 
@@ -55,13 +56,10 @@
     <section class="sponsor">
       <p>
         <span style="font-weight: bold; font-size: 20px;">Sponsor:</span> Apply
-        for your loan with one of fine lenders.
+        for your loan with one of fine lenders:
       </p>
-      <ul>
-        <a href=""><li>JavaScript</li></a>
-        <a href=""><li>HTML</li></a>
-      </ul>
+      <div id="lenders"></div>
     </section>
-    <script src="/script.js"></script>
+
   </body>
 </html>
